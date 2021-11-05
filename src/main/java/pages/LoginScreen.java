@@ -4,6 +4,8 @@ package pages;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginScreen extends BaseScreen {
     public LoginScreen(AppiumDriver<MobileElement> driver) {
@@ -19,11 +21,11 @@ public class LoginScreen extends BaseScreen {
 
 
     public LoginScreen fillEmail(String email){
+        new WebDriverWait(driver,20)
+                .until(ExpectedConditions.visibilityOf(emailEditText));
         type (emailEditText,email);
         return this;
 
-
-        ///gfvg
     }
 
     public LoginScreen fillPassword(String password){
