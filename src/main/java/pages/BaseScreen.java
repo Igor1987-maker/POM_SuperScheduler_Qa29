@@ -29,6 +29,11 @@ public class BaseScreen {
                 .until(ExpectedConditions.textToBePresentInElement(element,text));
     }
 
+    public void should ( MobileElement element, long time){
+        new WebDriverWait( driver,time)
+                .until(ExpectedConditions.visibilityOf(element));
+    }
+
     public boolean isDisplayedWithoutExp(MobileElement element){
         try {
             return element.isDisplayed();

@@ -1,6 +1,7 @@
 package scheduler;
 
 import configuration.ConfigScheduler;
+import dto.Credentials;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginScreen;
@@ -33,5 +34,23 @@ public class LoginTest extends ConfigScheduler {
                 .isFabAddButtonPresent();
 
         Assert.assertTrue(isFabPresent);
+    }
+
+    @Test
+    public void loginComplex(){
+        Credentials credentials = Credentials.builder()
+                .email("john111@gmail.com")
+                .password("Jj123456$")
+                .build();
+
+        boolean isFabPresent =
+                new LoginScreen(driver)
+                        .loginComplex(credentials)
+                        .skipWizard()
+                        .isFabAddButtonPresent();
+
+        Assert.assertTrue(isFabPresent);
+
+
     }
 }

@@ -1,0 +1,5 @@
+20:38:51 INFO  - Start super scheduler
+20:38:51 INFO  - Start method -->eventCreationTest
+20:39:39 INFO  - [LTNG] : Start of test eventCreationTest
+20:40:16 INFO  - [LTNG] : Start success of test eventCreationTest
+20:40:16 INFO  - Stop method -->eventCreationTest

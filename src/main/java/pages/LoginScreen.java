@@ -1,6 +1,7 @@
 package pages;
 
 
+import dto.Credentials;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,6 +35,16 @@ public class LoginScreen extends BaseScreen {
     }
 
     public WizardScreen clickLoginButton(){
+        hideKeyboard();
+        loginButton.click();
+        return new WizardScreen(driver);
+    }
+
+    public WizardScreen loginComplex(Credentials credentials){
+        new WebDriverWait(driver,20)
+                .until(ExpectedConditions.visibilityOf(emailEditText));
+        type(emailEditText, credentials.getEmail());
+        type(passwordEditText, credentials.getPassword());
         hideKeyboard();
         loginButton.click();
         return new WizardScreen(driver);
