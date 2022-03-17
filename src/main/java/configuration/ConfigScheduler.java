@@ -38,13 +38,13 @@ public class ConfigScheduler {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName","Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"8.0");
-        capabilities.setCapability("deviceName", "Nex");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"8.1");
+        capabilities.setCapability("deviceName", "Galaxy");
         capabilities.setCapability("appPackage","com.example.svetlana.scheduler" );
         capabilities.setCapability("appActivity", ".presentation.splashScreen.SplashScreenActivity");
         capabilities.setCapability("automationName", "Appium");
 
-        driver = new AppiumDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+        driver = new AppiumDriver<>(new URL("http://0.0.0.0:4723/wd/hub"),capabilities);
         //driver= EventFiringWebDriverFactory.getEventFiringWebDriver(driver, new AppiumListener());
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         logger.info("Start super scheduler");

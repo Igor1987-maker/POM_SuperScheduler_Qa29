@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomeScreen extends BaseScreen{
     public HomeScreen(AppiumDriver<MobileElement> driver) {
+
         super(driver);
     }
 

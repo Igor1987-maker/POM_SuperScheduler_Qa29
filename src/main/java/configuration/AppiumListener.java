@@ -1,5 +1,9 @@
 package configuration;
 
+/*import com.sun.org.slf4j.internal.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;*/
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.events.api.general.AppiumWebDriverEventListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -7,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pages.BaseScreen;
 
 public class AppiumListener implements AppiumWebDriverEventListener {
 
@@ -134,6 +139,13 @@ logger.info("Start find element -->" + by);
     @Override
     public void onException(Throwable throwable, WebDriver driver) {
  logger.info(throwable.fillInStackTrace().getMessage());
+        int i = (int) (System.currentTimeMillis()/1000%3600);
+        String screenshot = "src/test/screenshots/screen-"+i+".png";
+        BaseScreen bs = new BaseScreen((AppiumDriver<MobileElement>) driver);
+        bs.takeScreenShot(screenshot);
+
+
+
 
  /// screenshots + logger (path screenshot)
     }

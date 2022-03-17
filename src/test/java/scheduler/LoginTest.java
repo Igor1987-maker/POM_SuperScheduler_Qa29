@@ -15,7 +15,7 @@ public class LoginTest extends ConfigScheduler {
         boolean isFabPresent = new SplashScreen(driver)
                 .checkVersion("0.0.3")
                 .fillEmail("john001@gmail.com")
-                .fillPassword("Jj123456$")
+                .fillPassword("")
                 .clickLoginButton()
                 .skipWizard()
                 .isFabAddButtonPresent();
